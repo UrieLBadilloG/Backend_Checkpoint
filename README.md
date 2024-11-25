@@ -11,7 +11,7 @@ Esta API permite la gestión de usuarios, camiones (trucks), órdenes y ubicacio
 
 1. Clona el repositorio:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/UrieLBadilloG/Backend_Checkpoint.git
    ```
 
 2. Instala las dependencias:
