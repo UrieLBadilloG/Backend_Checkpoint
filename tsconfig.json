@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                // Compilar a JavaScript ES6
+    "module": "commonjs",           // Utilizar el sistema de módulos CommonJS
+    "rootDir": "./src",             // Carpeta de entrada del código TypeScript
+    "outDir": "./dist",             // Carpeta de salida del código compilado
+    "strict": true,                 // Activar todas las verificaciones estrictas
+    "esModuleInterop": true,        // Permitir la interoperabilidad entre ES Modules y CommonJS
+    "skipLibCheck": true,           // Ignorar la verificación de tipado en archivos de biblioteca
+    "forceConsistentCasingInFileNames": true, // Garantizar consistencia en el uso de mayúsculas y minúsculas en nombres de archivo
+    "resolveJsonModule": true,      // Permitir importar archivos JSON
+    "sourceMap": true               // Generar archivos de mapeo para depuración
+  },
+  "include": ["src"],               // Incluir todos los archivos en la carpeta src
+  "exclude": ["node_modules"]       // Excluir la carpeta node_modules
+}
