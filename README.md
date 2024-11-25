@@ -1,34 +1,43 @@
 
 # Backend Test API
 
-## Descripción
+---
 
-Esta API permite la gestión de usuarios, camiones (trucks), órdenes y ubicaciones (locations). Incluye autenticación con JWT y operaciones CRUD completas para cada dominio.
+## Cómo está hecho
+
+Esta API está dividida en partes para que sea más fácil trabajar con ella:
+
+- **Modelos:** Los esquemas (User, Truck, Order, Location) están definidos en la carpeta `models` usando Mongoose. Básicamente, ahí aseguramos que los datos sigan las reglas.
+- **Rutas:** En la carpeta `routes` conectamos los endpoints con sus controladores. Es como el puente que organiza las operaciones CRUD y la autenticación.
+- **Controladores:** En `controllers` está toda la lógica de las operaciones con la base de datos (crear, listar, actualizar, eliminar) y también el manejo del JWT.
+- **Archivo principal (`app.ts`):** Aquí es donde Express se configura, conectamos MongoDB, y ponemos middlewares como body-parser y cors.
+- **Variables de entorno:** Para que todo esté seguro y no haya claves sensibles en el código, usamos `.env` para guardar las credenciales de MongoDB y el secreto JWT.
+- **Pruebas:** Probamos todo en Postman, enviando requests y asegurándonos de que los endpoints hagan lo que tienen que hacer.
 
 ---
 
 ## Instalación
 
-1. Clona el repositorio:
+1. Clona el repositorio (asume que ya sabes usar Git):
    ```bash
    git clone https://github.com/UrieLBadilloG/Backend_Checkpoint.git
    ```
 
-2. Instala las dependencias:
+2. Instala las dependencias, ya sabes el clásico:
    ```bash
    npm install
    ```
 
-3. Configura el archivo `.env` con las siguientes variables:
+3. Configura el archivo `.env` con esto (súper básico):
    ```env
-   MONGO_URI=mongodb://127.0.0.1:27017/testdb
-   JWT_SECRET=your_secret_key
-   PORT=3000
+   MONGO_URI=mongodb://localhost:27017/testdb
+   JWT_SECRET=JWT_TOKEN
+   PORT=6000
    ```
 
-4. Inicia el servidor:
+4. Corre el servidor con este comando:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ---
